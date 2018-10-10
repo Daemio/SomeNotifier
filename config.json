@@ -1,0 +1,7 @@
+{
+    "db":{
+        "host":"ds159020.mlab.com:59020/vk_stub",
+        "user":"user1",
+        "password":"user1234"
+    }
+}
