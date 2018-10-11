@@ -1,16 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const vkApi = require('someapistub');
+const notify = require('../utils/notify');
 
 router.get('/', async function (req, res, next) { //TODO
-    let data;
-    try{
-        data = await vkApi.sendNotification([1,2,3,4], "hi");
-    } catch(err) {
-        console.log(err);
+    const template = req.query.template;
+
+    if(!template) {
+        res.status(400).json({message: 'no template provided'});
+        return;
     }
 
-    console.log(data);
+    notify(template);
+
+    res.status(200).json({message: "Players are being notified"});
 });
 
 module.exports = router;

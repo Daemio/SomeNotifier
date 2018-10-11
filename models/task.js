@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
-const playerSchema = mongoose.Schema({
+const taskSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    id: {
+    offset: {
         type: Number,
         required: true,
         unique: true,
@@ -11,10 +11,10 @@ const playerSchema = mongoose.Schema({
             message   : '{VALUE} is not an integer value'
         }
     },
-    first_name: {
-        type: String,
+    ids: {
+        type: [Number],
         required: true
     }
 });
 
-module.exports = mongoose.model('Player', playerSchema);
+module.exports = mongoose.model('Task', taskSchema);
