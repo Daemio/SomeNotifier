@@ -1,7 +1,11 @@
 {
     "db":{
-        "host":"ds159020.mlab.com:59020/vk_stub",
-        "user":"user1",
-        "password":"user1234"
+        "host":"localhost:27017/vk_stub",
+        "user":"",
+        "password":""
+    },
+    "vkApi":{
+        "maxPlayersPerRequest": 100,
+        "APIRequestTimeout": 334
     }
 }
