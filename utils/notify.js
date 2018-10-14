@@ -7,7 +7,7 @@ const _ = require('lodash');
 const logger = require('../logger');
 
 async function notify(template) {
-    let blocksToExecute = await _getBlocksToExecute();
+    const blocksToExecute = await _getBlocksToExecute();
 
     const offsetObservable = from(blocksToExecute).pipe(
         concatMap(item => from([item]).pipe(delay(TIMEOUT))),

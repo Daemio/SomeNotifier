@@ -4,7 +4,7 @@ const ERR = [
     {code: 3, description: 'Invalid data'}
 ];
 const REQUEST_TIME = 200;
-const FATAL_ERR_PROBABILYTY = 0.1;
+const FATAL_ERR_PROBABILYTY = 0; //you can emulate server crashes by setting probability > 0
 
 const wait = (delay) => new Promise(
         resolve => setTimeout(resolve, delay)
